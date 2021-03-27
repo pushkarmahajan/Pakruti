@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pakruti/CategoryItem.dart';
+import 'file:///D:/flutter_projects/pakruti/lib/widgets/CategoryItem.dart';
 import 'package:pakruti/dummy.dart';
 
 class CategoriesScreen extends StatelessWidget {

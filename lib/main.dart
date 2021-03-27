@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pakruti/categories_screen.dart';
-import 'package:pakruti/category_meals_screen.dart';
+import 'file:///D:/flutter_projects/pakruti/lib/screens/categories_screen.dart';
+import 'file:///D:/flutter_projects/pakruti/lib/screens/category_meals_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,9 +29,11 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
+      initialRoute: '/Pakruti_home',
       routes: {
-        '/category-meal': (ctx) => CategoryMealsScreen(),
+        '/Pakruti_home': (ctx) => CategoriesScreen(),
+        CategoryMealsScreen.RouteName : (ctx) => CategoryMealsScreen(),
       },
     );
   }
