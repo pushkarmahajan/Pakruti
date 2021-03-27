@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pakruti/widgets/meal_item.dart';
 import '../dummy.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
@@ -7,21 +8,26 @@ class CategoryMealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final routeArgs = ModalRoute
-        .of(context)
-        .settings
-        .arguments as Map;
+    final routeArgs = ModalRoute.of(context).settings.arguments as Map;
     final title = routeArgs['title'];
     final id = routeArgs['id'];
-    final categoryMeals = DUMMY_MEALS.where((meal)  {
+    final categoryMeals = DUMMY_MEALS.where((meal) {
       return meal.categories.contains(id);
-  }).toList();
+    }).toList();
     return Scaffold(
-    appBar: AppBar(title: Text(title),),
-    body: ListView.builder(itemBuilder: (ctx, index){
-      return Center(child: Text(categoryMeals[index].title));
-    },
-    itemCount: categoryMeals.length,)
-    );
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        body: ListView.builder(
+          itemBuilder: (ctx, index) {
+            return MealItem(
+                title: categoryMeals[index].title,
+                imageUrl: categoryMeals[index].imageUrl,
+                duration: categoryMeals[index].duration,
+                complexity: categoryMeals[index].complexity,
+                affordability: categoryMeals[index].affordability);
+          },
+          itemCount: categoryMeals.length,
+        ));
   }
 }
