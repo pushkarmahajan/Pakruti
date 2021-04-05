@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'file:///D:/flutter_projects/pakruti/lib/screens/categories_screen.dart';
 import 'file:///D:/flutter_projects/pakruti/lib/screens/category_meals_screen.dart';
+import 'package:pakruti/screens/meal_detail_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,33 +35,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/Pakruti_home': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.RouteName : (ctx) => CategoryMealsScreen(),
+        MealDetailScreen.RouteName : (ctx) => MealDetailScreen(),
       },
+      onGenerateRoute: ,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
 
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title,style: Theme.of(context).textTheme.title,),
-      ),
-      body: Center(
-
-      ), //
-    );
-  }
-}
