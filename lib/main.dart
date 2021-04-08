@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'file:///D:/flutter_projects/pakruti/lib/screens/categories_screen.dart';
 import 'file:///D:/flutter_projects/pakruti/lib/screens/category_meals_screen.dart';
 import 'package:pakruti/screens/meal_detail_screen.dart';
+import 'package:pakruti/screens/tab_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pakruti',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.amber,
+        primarySwatch: Colors.cyan,
+        accentColor: Colors.black54,
         canvasColor: Color.fromRGBO(255,254,229,1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       // home: CategoriesScreen(),
       initialRoute: '/Pakruti_home',
       routes: {
-        '/Pakruti_home': (ctx) => CategoriesScreen(),
+        '/Pakruti_home': (ctx) => TabsScreen(),
         CategoryMealsScreen.RouteName : (ctx) => CategoryMealsScreen(),
         MealDetailScreen.RouteName : (ctx) => MealDetailScreen(),
       },
