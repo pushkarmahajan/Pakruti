@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         CategoryMealsScreen.RouteName : (ctx) => CategoryMealsScreen(),
         MealDetailScreen.RouteName : (ctx) => MealDetailScreen(),
       },
-      onGenerateRoute: ,
+      // onGenerateRoute: ,
     );
   }
 }

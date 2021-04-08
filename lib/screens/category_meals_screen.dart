@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pakruti/widgets/meal_item.dart';
 import '../dummy.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class CategoryMealsScreen extends StatelessWidget {
         .of(context)
         .settings
         .arguments as Map;
+
     final title = routeArgs['title'];
     final id = routeArgs['id'];
     final categoryMeals = DUMMY_MEALS.where((meal)  {
@@ -18,10 +20,17 @@ class CategoryMealsScreen extends StatelessWidget {
   }).toList();
     return Scaffold(
     appBar: AppBar(title: Text(title),),
-    body: ListView.builder(itemBuilder: (ctx, index){
-      return Center(child: Text(categoryMeals[index].title));
-    },
-    itemCount: categoryMeals.length,)
-    );
+    body: ListView.builder(
+      itemBuilder: (ctx, index) {
+        return MealItem(
+            id : categoryMeals[index].id,
+            title: categoryMeals[index].title,
+            imageUrl: categoryMeals[index].imageUrl,
+            duration: categoryMeals[index].duration,
+            complexity: categoryMeals[index].complexity,
+            affordability: categoryMeals[index].affordability);
+      },
+      itemCount: categoryMeals.length,
+    ));
   }
 }
