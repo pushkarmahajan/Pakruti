@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pakruti/screens/filters_screen.dart';
 import 'file:///D:/flutter_projects/pakruti/lib/screens/categories_screen.dart';
 import 'file:///D:/flutter_projects/pakruti/lib/screens/category_meals_screen.dart';
 import 'package:pakruti/screens/meal_detail_screen.dart';
@@ -32,11 +33,12 @@ class MyApp extends StatelessWidget {
         )
       ),
       // home: CategoriesScreen(),
-      initialRoute: '/Pakruti_home',
+      initialRoute: '/',
       routes: {
-        '/Pakruti_home': (ctx) => TabsScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryMealsScreen.RouteName : (ctx) => CategoryMealsScreen(),
         MealDetailScreen.RouteName : (ctx) => MealDetailScreen(),
+        FiltersScreen.RouteName : (ctx) => FiltersScreen(),
       },
       // onGenerateRoute: ,
     );
