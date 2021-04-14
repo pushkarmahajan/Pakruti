@@ -3,6 +3,9 @@ import 'package:pakruti/dummy.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const RouteName = '/MealDetailScreen';
+  final Function toggleFavorite;
+  final Function isMealfavorite;
+  MealDetailScreen(this.toggleFavorite, this.isMealfavorite);
 
   Widget BuildSectionTitle(BuildContext context, String text) {
     return Container(
@@ -82,11 +85,9 @@ class MealDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          Icons.delete,
+           isMealfavorite(mealId) ? Icons.favorite : Icons.favorite_border,
         ),
-        onPressed: (){
-          Navigator.of(context).pop(mealId);
-        },
+        onPressed : () => toggleFavorite(mealId),
       ),
     );
   }

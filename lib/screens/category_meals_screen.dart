@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pakruti/widgets/meal_item.dart';
-import '../dummy.dart';
 import 'package:pakruti/model/meal.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
@@ -51,7 +50,6 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
                 imageUrl: displayedMeal[index].imageUrl,
                 duration: displayedMeal[index].duration,
                 complexity: displayedMeal[index].complexity,
-                removeItem: _removeMeal,
                 affordability: displayedMeal[index].affordability);
 
           },
